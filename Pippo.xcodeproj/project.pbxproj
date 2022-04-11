@@ -8,17 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		18FF567328022551007CCB1E /* PippoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF567228022551007CCB1E /* PippoApp.swift */; };
-		18FF567528022551007CCB1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF567428022551007CCB1E /* ContentView.swift */; };
-		18FF567728022553007CCB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FF567628022553007CCB1E /* Assets.xcassets */; };
 		18FF567A28022553007CCB1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FF567928022553007CCB1E /* Preview Assets.xcassets */; };
+		18FF568428022EBD007CCB1E /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18FF568328022EBD007CCB1E /* FredokaOne-Regular.ttf */; };
+		18FF568A28023156007CCB1E /* Jost.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18FF568928023156007CCB1E /* Jost.ttf */; };
+		18FF569028023C5A007CCB1E /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF568F28023C5A007CCB1E /* GameModel.swift */; };
+		18FF569228035D9E007CCB1E /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF569128035D9E007CCB1E /* GameViewModel.swift */; };
+		18FF5694280361EC007CCB1E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF5693280361EC007CCB1E /* GameView.swift */; };
+		18FF5696280397D4007CCB1E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF5695280397D4007CCB1E /* Alerts.swift */; };
+		18FF569C2803ABFD007CCB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FF569B2803ABFD007CCB1E /* Assets.xcassets */; };
+		18FF569E2803B120007CCB1E /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF569D2803B120007CCB1E /* Palette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18FF566F28022551007CCB1E /* Pippo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pippo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FF567228022551007CCB1E /* PippoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PippoApp.swift; sourceTree = "<group>"; };
-		18FF567428022551007CCB1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		18FF567628022553007CCB1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18FF567928022553007CCB1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		18FF568328022EBD007CCB1E /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FredokaOne-Regular.ttf"; sourceTree = "<group>"; };
+		18FF568828022F7F007CCB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		18FF568928023156007CCB1E /* Jost.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Jost.ttf; sourceTree = "<group>"; };
+		18FF568F28023C5A007CCB1E /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		18FF569128035D9E007CCB1E /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		18FF5693280361EC007CCB1E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		18FF5695280397D4007CCB1E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		18FF569B2803ABFD007CCB1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18FF569D2803B120007CCB1E /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +64,13 @@
 		18FF567128022551007CCB1E /* Pippo */ = {
 			isa = PBXGroup;
 			children = (
+				18FF569B2803ABFD007CCB1E /* Assets.xcassets */,
+				18FF568828022F7F007CCB1E /* Info.plist */,
 				18FF567228022551007CCB1E /* PippoApp.swift */,
-				18FF567428022551007CCB1E /* ContentView.swift */,
-				18FF567628022553007CCB1E /* Assets.xcassets */,
+				18FF56822802262F007CCB1E /* Views */,
+				18FF568128022624007CCB1E /* ViewModels */,
+				18FF56802802261D007CCB1E /* Models */,
+				18FF569F2803B223007CCB1E /* Utilities */,
 				18FF567828022553007CCB1E /* Preview Content */,
 			);
 			path = Pippo;
@@ -65,6 +82,49 @@
 				18FF567928022553007CCB1E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		18FF56802802261D007CCB1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18FF568F28023C5A007CCB1E /* GameModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		18FF568128022624007CCB1E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				18FF569128035D9E007CCB1E /* GameViewModel.swift */,
+				18FF5695280397D4007CCB1E /* Alerts.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		18FF56822802262F007CCB1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18FF5693280361EC007CCB1E /* GameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		18FF568728022EE4007CCB1E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18FF568928023156007CCB1E /* Jost.ttf */,
+				18FF568328022EBD007CCB1E /* FredokaOne-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		18FF569F2803B223007CCB1E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				18FF568728022EE4007CCB1E /* Fonts */,
+				18FF569D2803B120007CCB1E /* Palette.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FF568A28023156007CCB1E /* Jost.ttf in Resources */,
 				18FF567A28022553007CCB1E /* Preview Assets.xcassets in Resources */,
-				18FF567728022553007CCB1E /* Assets.xcassets in Resources */,
+				18FF568428022EBD007CCB1E /* FredokaOne-Regular.ttf in Resources */,
+				18FF569C2803ABFD007CCB1E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +199,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18FF567528022551007CCB1E /* ContentView.swift in Sources */,
+				18FF569E2803B120007CCB1E /* Palette.swift in Sources */,
+				18FF569228035D9E007CCB1E /* GameViewModel.swift in Sources */,
+				18FF5696280397D4007CCB1E /* Alerts.swift in Sources */,
+				18FF569028023C5A007CCB1E /* GameModel.swift in Sources */,
 				18FF567328022551007CCB1E /* PippoApp.swift in Sources */,
+				18FF5694280361EC007CCB1E /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +338,7 @@
 				DEVELOPMENT_TEAM = 3XV8992957;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pippo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +368,7 @@
 				DEVELOPMENT_TEAM = 3XV8992957;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pippo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
