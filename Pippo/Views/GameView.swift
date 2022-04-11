@@ -11,28 +11,34 @@ import SwiftUI
 struct GameView: View {
     
     @StateObject var vm: GameViewModel = GameViewModel()
+    @State var playerOne: String
+    @State var playerTwo: String
     @State var alerts: AlertItem?
-    @State var currentPlayer = "Jugador 1, ¡es tu turno!"
+    @State var currentPlayer = "¡Que empiece el juego!"
     @State var playerOneTurn = true
     @State var playerTwoTurn = false
     @State var disable = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
             Image("bg")
                 .resizable()
-                .scaledToFit()
-                .ignoresSafeArea()
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
                 
             VStack {
                 Text(currentPlayer)
                     .font(Font.custom("FredokaOne-Regular", size: 32))
                     .multilineTextAlignment(.center)
-                    
+                    .padding(.horizontal)
+                Text(vm.nameForPlayer(player: playerOne))
+                    .font(Font.custom("Jost", size: 19))
+                    .padding(5)
+                    .multilineTextAlignment(.center)
                 Text("Selecciona un casillero.")
                     .font(Font.custom("Jost", size: 17))
-                    .padding(10)
+                    .padding(.horizontal, 10)
                 LazyVGrid(columns: vm.columns, spacing: 15) {
                     ForEach(0..<9, id: \.self) { i in
                         ZStack {
@@ -53,7 +59,7 @@ struct GameView: View {
                                 disable = true
                                 playerOneTurn = false
                                 playerTwoTurn = true
-                                currentPlayer = "Jugador 2, ¡Es tu turno!"
+                                currentPlayer = "\(playerTwo), ¡Es tu turno!"
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
                                     disable = false
@@ -67,7 +73,6 @@ struct GameView: View {
                                     disable = true
                                     alerts = AlertContext.playerOneWin
                                 }
-                                
                                 return
                             }
                         
@@ -77,7 +82,7 @@ struct GameView: View {
                                 disable = true
                                 playerTwoTurn = false
                                 playerOneTurn = true
-                                currentPlayer = "¡Es turno del jugador 1!"
+                                currentPlayer = "\(playerOne), ¡Es tu turno!"
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
                                     disable = false
@@ -91,15 +96,20 @@ struct GameView: View {
                                     disable = true
                                     alerts = AlertContext.playerTwoWin
                                 }
-                                
                                 return
-                                
                             }
                         }
                     }
                 }
                 .disabled(disable)
                 
+                Button("Ingresar nuevos jugadores") {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+                .frame(width: UIScreen.main.bounds.width * 0.6)
+                .padding(10)
+                .foregroundColor(Palette.darkAccent)
+                .font(Font.custom("Jost", size: 18))
             }
             .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.7, alignment: .center)
             .padding(.horizontal, 20)
@@ -111,7 +121,7 @@ struct GameView: View {
                       message: Text(alert.message),
                       dismissButton: .default(Text(alert.buttonTitle)) {
                     vm.resetGame()
-                    currentPlayer = "Jugador 1, ¡es tu turno!"
+                    currentPlayer = "¡Que empiece el juego!"
                     playerTwoTurn = false
                     playerOneTurn = true
                     disable = false
@@ -119,11 +129,12 @@ struct GameView: View {
                 )
             }
         }
+        .navigationBarHidden(true)
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView(playerOne: "", playerTwo: "")
     }
 }

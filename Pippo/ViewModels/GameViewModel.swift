@@ -15,6 +15,17 @@ final class GameViewModel: ObservableObject {
                                GridItem(.flexible(), spacing: -20),
                                GridItem(.flexible(), spacing: -20)]
     
+    func textIsAproppiate(name1: String, name2: String) -> Bool {
+        if (name1.isEmpty || name1.count < 3) || (name2.isEmpty || name2.count < 3) {
+            return false
+        }
+        return true
+    }
+    
+    func nameForPlayer(player: String) -> String {
+        return "¡\(player) debe comenzar el juego!"
+    }
+    
     func isOcuppied(index: Int) -> Bool {
         
         let filteredMoves = moves.firstIndex { $0?.boardIndex == index }

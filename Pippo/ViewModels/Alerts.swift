@@ -27,4 +27,6 @@ struct AlertContext {
     static let gameIsOver = AlertItem(title: "¡Es un empate! El juego ha terminado",
                                     message: "¿Iniciar una nueva partida?",
                                     buttonTitle: "Ok")
+    
+    static let namesArentAproppiate = AlertItem(title: "Los nombres deben tener al menos 3 caracteres", message: "Intenta otra vez", buttonTitle: "Ok")
 }

@@ -26,9 +26,9 @@ struct Move {
         
         switch player {
         case .playerOne:
-            return "dog1"
+            return "gorila"
         case .playerTwo:
-            return "dog2"
+            return "leopard"
         }
     }
 }
